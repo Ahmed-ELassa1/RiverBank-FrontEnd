@@ -1,0 +1,241 @@
+.services {
+  border-radius: 100px;
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .serviceCard {
+    border: 2px solid #c18847;
+    border-radius: 11px;
+    background-color: #fff;
+    position: relative;
+    transition: 0.3s all ease-in-out;
+
+    p {
+      font-size: 15px;
+      color: #6a6a6a;
+    }
+  }
+
+  .serviceCard:hover,
+  .serviceCard:hover p {
+    color: #fff;
+  }
+
+  .serviceCard:hover {
+    background-color: #c18847;
+  }
+
+  .service-content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: start;
+  }
+
+  .serviceLabel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #c18847;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .service-icon {
+      filter: invert(1);
+    }
+  }
+
+  .serviceTitle {
+    margin: 0;
+  }
+}
+
+@media (min-width: 1000px) {
+  .ourServices {
+    .services-section-header {
+      padding: 10px 15px;
+      font-size: 40px;
+    }
+
+    .services-section-subheader {
+      padding: 10px 15px;
+      font-size: 20px;
+    }
+
+    .services {
+      margin-bottom: 80px;
+      padding: 35px 0;
+      gap: 40px;
+    }
+
+    .serviceLabel {
+      margin-right: 20px;
+      height: 55px;
+      margin-top: -30px;
+      width: 55px;
+      padding: 30px;
+    }
+
+    .serviceTitle {
+      font-size: 26px;
+    }
+
+    .serviceCard {
+      width: 24%;
+      padding: 30px 20px;
+    }
+  }
+}
+
+@media (min-width: 850px) and (max-width: 1000px) {
+  .ourServices {
+    .services-section-header {
+      padding: 8px 15px;
+      font-size: 30px;
+    }
+
+    .services-section-subheader {
+      padding: 10px 15px;
+      font-size: 20px;
+    }
+
+    .services {
+      margin-bottom: 80px;
+      padding: 35px 0;
+      gap: 30px;
+    }
+
+    .serviceTitle {
+      font-size: 30px;
+    }
+
+    .serviceLabel {
+      margin-right: 30px;
+      height: 50px;
+      margin-top: -35px;
+      width: 50px;
+      padding: 30px;
+    }
+
+    .serviceCard {
+      width: 48%;
+      padding: 30px 20px;
+    }
+  }
+}
+
+@media (min-width: 700px) and (max-width: 850px) {
+  .ourServices {
+    .services-section-header {
+      padding: 8px 15px;
+      font-size: 30px;
+    }
+
+    .services-section-subheader {
+      padding: 10px 12px;
+      font-size: 18px;
+    }
+
+    .services {
+      margin-bottom: 50px;
+      padding: 35px 0;
+      gap: 40px;
+    }
+
+    .serviceTitle {
+      font-size: 25px;
+    }
+
+    .serviceLabel {
+      margin-right: 20px;
+      height: 50px;
+      margin-top: -30px;
+      width: 50px;
+      padding: 30px;
+    }
+  }
+
+  .services {
+    flex-wrap: wrap;
+    padding: 40px 0;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 0;
+
+    .serviceCard {
+      width: 46%;
+      padding: 25px 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .ourServices {
+    .services-section-header {
+      padding: 8px 15px;
+      font-size: 30px;
+    }
+
+    .services-section-subheader {
+      padding: 10px 12px;
+      font-size: 18px;
+    }
+
+    .services {
+      margin-bottom: 50px;
+      padding: 35px 0;
+      gap: 40px;
+    }
+
+    .serviceTitle {
+      font-size: 25px;
+    }
+
+    .serviceLabel {
+      margin-right: 20px;
+      height: 50px;
+      margin-top: -30px;
+      width: 50px;
+      padding: 30px;
+    }
+  }
+
+  .services {
+    flex-direction: column;
+    padding: 40px 0;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    border-radius: 0;
+
+    .serviceCard {
+      width: 90%;
+      padding: 25px 20px;
+    }
+  }
+
+}
+
+.ourServices {
+  .services-section-header {
+    border-radius: 8px;
+    width: fit-content;
+    margin: auto;
+    text-align: center;
+    color: var(--sections-header);
+  }
+
+  .services-section-subheader {
+    width: fit-content;
+    margin: auto;
+    text-align: center;
+    color: var(--sections-header);
+  }
+}
