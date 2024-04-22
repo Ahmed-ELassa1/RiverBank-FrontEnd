@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/RiverBank-FrontEnd/static/css/main.a9bc3861.css",
-    "main.js": "/RiverBank-FrontEnd/static/js/main.2dd5549a.js",
+    "main.css": "/RiverBank-FrontEnd/static/css/main.0fd397f2.css",
+    "main.js": "/RiverBank-FrontEnd/static/js/main.df4825d6.js",
     "static/js/592.e6d506d8.chunk.js": "/RiverBank-FrontEnd/static/js/592.e6d506d8.chunk.js",
     "static/media/city.avif": "/RiverBank-FrontEnd/static/media/city.25c109ff79206eec8f2b.avif",
     "static/media/props.avif": "/RiverBank-FrontEnd/static/media/props.a19e5c4ec6d25d2ca1f6.avif",
@@ -19,12 +19,12 @@
     "static/media/logoImg.png": "/RiverBank-FrontEnd/static/media/logoImg.58e4842c570f8ee03a9d.png",
     "static/media/logoTxt.png": "/RiverBank-FrontEnd/static/media/logoTxt.3048aadf4c276299bbd2.png",
     "index.html": "/RiverBank-FrontEnd/index.html",
-    "main.a9bc3861.css.map": "/RiverBank-FrontEnd/static/css/main.a9bc3861.css.map",
-    "main.2dd5549a.js.map": "/RiverBank-FrontEnd/static/js/main.2dd5549a.js.map",
+    "main.0fd397f2.css.map": "/RiverBank-FrontEnd/static/css/main.0fd397f2.css.map",
+    "main.df4825d6.js.map": "/RiverBank-FrontEnd/static/js/main.df4825d6.js.map",
     "592.e6d506d8.chunk.js.map": "/RiverBank-FrontEnd/static/js/592.e6d506d8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a9bc3861.css",
-    "static/js/main.2dd5549a.js"
+    "static/css/main.0fd397f2.css",
+    "static/js/main.df4825d6.js"
   ]
 }
