@@ -1,8 +1,8 @@
 {
+  "homepage": "http://Ahmed-ELassa1.github.io/RiverBank-FrontEnd",
   "name": "river-bank",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://Ahmed-ELassa1.github.io/RiverBank-FrontEnd",
   "dependencies": {
     "@ant-design/icons": "^5.3.0",
     "@testing-library/jest-dom": "^5.17.0",

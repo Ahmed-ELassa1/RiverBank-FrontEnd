@@ -46,8 +46,8 @@ function App() {
       path: "/",
       element: <MainLayout />,
       children: [
-        { path: "/", index: true, element: <Home /> },
         { path: "/", element: <Home /> },
+        { path: "/home", element: <Home /> },
         { path: "/cities", element: <Cities /> },
         { path: "/developers", element: <Developers /> },
         { path: "/properties", element: <Properties /> },
