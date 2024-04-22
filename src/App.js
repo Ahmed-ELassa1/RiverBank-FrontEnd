@@ -1,4 +1,9 @@
-import { Route, Routes } from "react-router-dom";
+import {
+  Route,
+  Routes,
+  RouterProvider,
+  createHashRouter,
+} from "react-router-dom";
 
 import MainLayout from "./layouts/MainLayout";
 import DashLayout from "./layouts/DashLayout/DashLayout";
@@ -36,161 +41,168 @@ import "./App.css";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 
 function App() {
+  const routers = createHashRouter([
+    {
+      path: "/",
+      element: <MainLayout />,
+      children: [
+        { path: "/", index: true, element: <Home /> },
+        { path: "/", element: <Home /> },
+        { path: "/cities", element: <Cities /> },
+        { path: "/developers", element: <Developers /> },
+        { path: "/properties", element: <Properties /> },
+        { path: "/blogs", element: <Blogs /> },
+        { path: "/projects", element: <Projects /> },
+        {
+          path: "/projects/:id",
+          element: <ProjectDetails />,
+        },
+        { path: "/contactUs", element: <ContactUs /> },
+        {
+          path: "/login",
+          element: <Login />,
+        },
+        {
+          path: "/forgotPassword",
+          element: <ForgotPassword />,
+        },
+        {
+          path: "/updatePassword",
+          element: <UpdatePassword />,
+        },
+      ],
+    },
+    {
+      path: "/dashboard",
+      element: <DashLayout />,
+      children: [
+        {
+          path: "/dashboard",
+          index: true,
+          element: (
+            <ProtectedRoute>
+              <PropertiesList />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "/dashboard/properties",
+          element: (
+            <ProtectedRoute>
+              <PropertiesList />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "/dashboard/properties/create",
+          element: (
+            <ProtectedRoute>
+              <CreateProperty />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "/dashboard/properties/view/:id",
+          element: (
+            <ProtectedRoute>
+              <PropertiesDetails />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "/dashboard/projects",
+          element: (
+            <ProtectedRoute>
+              <ProjectsList />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "/dashboard/projects/create",
+          element: (
+            <ProtectedRoute>
+              <CreateProject />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "/dashboard/projects/view/:id",
+          element: (
+            <ProtectedRoute>
+              <ProjectsDetails />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "/dashboard/blogs",
+          element: (
+            <ProtectedRoute>
+              <BlogsList />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "/dashboard/blogs/create",
+          element: (
+            <ProtectedRoute>
+              <CreateBlog />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "/dashboard/blogs/view/:id",
+          element: (
+            <ProtectedRoute>
+              <BlogsDetails />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "/dashboard/clientInfo",
+          element: (
+            <ProtectedRoute>
+              <ClientInfoList />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "/dashboard/clientInfo/view/:id",
+          element: (
+            <ProtectedRoute>
+              <ClientInfoDetails />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "/dashboard/developers",
+          element: (
+            <ProtectedRoute>
+              <DevelopersList />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "/dashboard/developers/create",
+          element: (
+            <ProtectedRoute>
+              <CreateDeveloper />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "/dashboard/developers/view/:id",
+          element: (
+            <ProtectedRoute>
+              <DevelopersDetails />
+            </ProtectedRoute>
+          ),
+        },
+      ],
+    },
+  ]);
   return (
     <div className="App">
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/forgotPassword" element={<ForgotPassword />} />
-        <Route path="/updatePassword" element={<UpdatePassword />} />
-
-        {/* DASHBOARD */}
-        <Route
-          path="/dashboard"
-          element={
-            <ProtectedRoute>
-              <DashLayout />
-            </ProtectedRoute>
-          }
-        >
-          <Route
-            path="properties"
-            element={
-              <ProtectedRoute>
-                <PropertiesList />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            index
-            path=""
-            element={
-              <ProtectedRoute>
-                <PropertiesList />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="properties/create"
-            element={
-              <ProtectedRoute>
-                <CreateProperty />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="properties/view/:id"
-            element={
-              <ProtectedRoute>
-                <PropertiesDetails />
-              </ProtectedRoute>
-            }
-          />
-
-          <Route
-            path="projects"
-            element={
-              <ProtectedRoute>
-                <ProjectsList />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="projects/create"
-            element={
-              <ProtectedRoute>
-                <CreateProject />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="projects/view/:id"
-            element={
-              <ProtectedRoute>
-                <ProjectsDetails />
-              </ProtectedRoute>
-            }
-          />
-
-          <Route
-            path="blogs"
-            element={
-              <ProtectedRoute>
-                <BlogsList />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="blogs/create"
-            element={
-              <ProtectedRoute>
-                <CreateBlog />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="blogs/view/:id"
-            element={
-              <ProtectedRoute>
-                <BlogsDetails />
-              </ProtectedRoute>
-            }
-          />
-
-          <Route
-            path="clientInfo"
-            element={
-              <ProtectedRoute>
-                <ClientInfoList />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="clientInfo/view/:id"
-            element={
-              <ProtectedRoute>
-                <ClientInfoDetails />
-              </ProtectedRoute>
-            }
-          />
-
-          <Route
-            path="developers"
-            element={
-              <ProtectedRoute>
-                <DevelopersList />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="developers/create"
-            element={
-              <ProtectedRoute>
-                <CreateDeveloper />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="developers/view/:id"
-            element={
-              <ProtectedRoute>
-                <DevelopersDetails />
-              </ProtectedRoute>
-            }
-          />
-        </Route>
-
-        {/* MAIN HOME */}
-        <Route path="/" element={<MainLayout />}>
-          <Route index element={<Home />} />
-          <Route path="/cities" element={<Cities />} />
-          <Route path="/developers" element={<Developers />} />
-          <Route path="/properties" element={<Properties />} />
-          <Route path="/blogs" element={<Blogs />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/projects/:id" element={<ProjectDetails />} />
-          <Route path="/contactUs" element={<ContactUs />} />
-        </Route>
-      </Routes>
+      <RouterProvider router={routers} />
 
       <ToastContainer
         limit={6}
